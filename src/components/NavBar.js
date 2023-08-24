@@ -13,9 +13,9 @@ const NavBar = () => {
 
     return (
         <Box sx = {{p: 0, m: 0, width: 200, height: "100vh"}}>
-            <Stack spacing = {1}>
+            <Stack spacing = {2}>
                 {bodyParts.map((bodyPart) => (
-                    <Button variant="outlined">
+                    <Button size = "large" variant = "contained">
                         <Typography fontSize = "24px" fontWeight = "bold" textTransform = "capitalize"
                                     color = "#3A13242">
                             {bodyPart}
