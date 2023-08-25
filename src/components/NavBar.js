@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from "react";
+
 import {Box, Button, Stack, Typography} from "@mui/material";
 import fetchBodyPartsData from "../utils/fetchBodyPartsData";
+import {useEffect, useState} from "react";
 
 const NavBar = () => {
     const [bodyParts, setBodyParts] = useState([]);
