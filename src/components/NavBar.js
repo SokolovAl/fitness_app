@@ -1,0 +1,30 @@
+import React, {useEffect, useState} from "react";
+import {Box, Button, Stack, Typography} from "@mui/material";
+import fetchBodyPartsData from "../utils/fetchBodyPartsData";
+
+const NavBar = () => {
+    const [bodyParts, setBodyParts] = useState([]);
+
+    useEffect(() => {
+        fetchBodyPartsData()
+            .then(fetchedBodyParts => setBodyParts(fetchedBodyParts))
+            .catch(error => console.error("Error fetching body parts data:", error));
+    }, []);
+
+    return (
+        <Box sx = {{p: 0, m: 0, width: 200, height: "100vh"}}>
+            <Stack spacing = {1}>
+                {bodyParts.map((bodyPart) => (
+                    <Button variant="outlined">
+                        <Typography fontSize = "24px" fontWeight = "bold" textTransform = "capitalize"
+                                    color = "#3A13242">
+                            {bodyPart}
+                        </Typography>
+                    </Button>
+                ))}
+            </Stack>
+        </Box>
+    );
+};
+
+export default NavBar;
